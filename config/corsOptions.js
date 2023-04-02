@@ -1,4 +1,9 @@
-const allowedOrigins = require("./allowedOrigins");
+const appState = process.env.NODE_ENV;
+const allowedOrigins = [
+  appState === "production"
+    ? ["https://technotebyjemil.onrender.com"]
+    : ["http://localhost:3000"],
+];
 
 const corsOptions = {
   origin: (origin, callback) => {
