@@ -1,12 +1,6 @@
-const appState = process.env.NODE_ENV;
-const allowedOrigins = [
-  ...(appState === "production"
-    ? ["https://technotebyjemil.onrender.com"]
-    : ["http://localhost:3000"]),
-];
+const allowedOrigins = ["https://technotebyjemil.onrender.com"];
 const corsOptions = {
   origin: (origin, callback) => {
-    console.log(origin, "hekeio");
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
